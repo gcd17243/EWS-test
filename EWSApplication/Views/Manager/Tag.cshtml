@@ -1,0 +1,59 @@
+﻿@model List<EWSApplication.Entities.DBContext.Tag>
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@Styles.Render("~/bundles/table")
+<main>
+
+    <h2>List of tags <small>table tag</small></h2>
+    <a href="@Url.Action("index","Manager")">Table users...</a>
+    <a class="post_project" href="#" title="">Create</a>
+    <ul class="responsive-table">
+        <li class="table-header">
+            <div class="col col-1">Tag Id</div>
+            <div class="col col-2">Tag Name</div>
+            <div class="col col-3">Description</div>
+            <div class="col col-6"></div>
+        </li>
+        @foreach (var tag in Model)
+        {
+
+            <li class="table-row">
+                <div class="col col-1" data-label="tag Id">@tag.tagid</div>
+                <div class="col col-2" data-label="tag Name">@tag.tagname</div>
+                <div class="col col-3" data-label="description">@tag.description</div>
+                <div class="col col-6" data-label="action"><a id="btn" href="@Url.Action("deletetag","manager", new { id=tag.tagid})">X</a></div>
+            </li>
+        }
+
+    </ul>
+    <div class="post-popup pst-pj">
+        <div class="post-project">
+            <h3>New Tag</h3>
+            <div class="post-project-fields">
+                <form action="@Url.Action("CreateTag","Manager")" id="UploadForm" method="post">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <input type="text" name="tagName" placeholder="TAG NAME">
+                        </div>
+                        <div class="col-lg-12">
+                            <input type="text" name="description" placeholder="DESCRIPTION">
+                        </div>
+                        <div class="col-lg-12">
+                            <ul>
+                                <li><button class="active" type="submit" value="post" id="post_submit">Post</button></li>
+                                <li><a href="#" id="cancel-project_post" title="">Cancel</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <a href="#" title=""><i class="far fa-times-circle"></i></a>
+        </div>
+    </div>
+</main>
+
+

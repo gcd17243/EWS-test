@@ -1,0 +1,13 @@
+.cm-tag {
+    display: inline-block;
+    color: #b2b2b2 !important;
+    font-size: 14px;
+    background-color: #f1f1f1;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    -ms-border-radius: 30px;
+    -o-border-radius: 30px;
+    border-radius: 26px;
+    padding: 4px 13px;
+    font-weight: 500;
+}

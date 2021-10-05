@@ -1,0 +1,36 @@
+﻿@model List<EWSApplication.DataLayers.Common.PostWaitingActive>
+    @{
+        ViewBag.Title = "Review";
+        Layout = "~/Views/Shared/_Layout.cshtml";
+    }
+    @Styles.Render("~/bundles/table")
+
+    <main>
+
+        <h2>Review posts <small>table posts</small></h2>
+        <a href="@Url.Action("download","Manager")">Table Download...</a>
+        <ul class="responsive-table">
+            <li class="table-header">
+                <div class="col col-1">Post Id</div>
+                <div class="col col-2">User Name</div>
+                <div class="col col-3">Title</div>
+                <div class="col col-6"></div>
+            </li>
+            @foreach (var p in Model)
+                {
+            <li class="table-row">
+                <div class="col col-1" data-label="Post Id">@p.postid</div>
+                <div class="col col-2" data-label="User Name">@p.username</div>
+                <div class="col col-3" data-label="Title">@p.title</div>
+                <div class="col col-6" data-label="action">
+                    <a id="btn" href="@Url.Action("Accept","manager", new { postid=@p.postid})">&ensp;&ensp;Accept</a>
+                    <a id="btn" style="color:#2dc215" href="@Url.Action("detail","post", new { @p.postid})">View</a>
+                </div>
+            </li>
+
+            }
+        </ul>
+
+    </main>
+
+

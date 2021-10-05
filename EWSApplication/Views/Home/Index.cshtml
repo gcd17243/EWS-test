@@ -1,0 +1,397 @@
+﻿@model List<EWSApplication.DataLayers.Common.StructurePostToRender>
+
+@{
+    ViewBag.Title = "Home Page";
+}
+
+@Styles.Render("~/Assets/codemirror")
+@Scripts.Render("~/bundles/codemirror")
+@Scripts.Render("~/bundles/countdown")
+
+<div class="search-sec">
+    <div class="container">
+        <div class="search-box">
+            <form>
+                <input type="text" name="search" placeholder="Search keywords">
+                <button type="submit">Search </button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<main>
+    <div class="main-section">
+        <div class="container">
+            <div class="main-section-data">
+                <div class="row">
+                    <div class="col-lg-3">
+                        <div class="filter-secs">
+                            <div class="filter-heading">
+                                <h3>Welcome</h3>
+                                <a href="#" title="">@ViewBag.userId</a>
+                            </div>
+                            <div class="paddy" style="width: 100%;">
+                                <div class="filter-dd">
+                                    <div class="filter-ttl">
+                                        <h3>Name</h3>
+                                        <a href="#" title="">@ViewBag.userName</a>
+                                    </div>
+                                </div>
+                                <div class="filter-dd">
+                                    <div class="filter-ttl">
+                                        <h3>Faculty</h3>
+                                        <a href="#" title="">@ViewBag.facultyname</a>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        @if (Convert.ToInt32(ViewBag.uroleid) == 4)
+                        {
+                    <div class="filter-secs">
+                        <div class="filter-heading">
+                            <h3>Manager</h3>
+                            <a href="#" title="">Coordinator</a>
+                        </div>
+                        <div class="paddy" style="width: 100%;">
+                            <div class="filter-dd">
+                                <div class="filter-ttl">
+                                    <h3>Review post</h3>
+                                    <a href="@Url.Action("review","manager", new { facultyid=ViewBag.ufacultyid})" title="">manager</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>}
+
+                        @if (Convert.ToInt32(ViewBag.uroleid) == 6)
+                        {
+                    <div class="filter-secs">
+                        <div class="filter-heading">
+                            <h3>Manager</h3>
+                            <a href="#" title="">Marketting manager</a>
+                        </div>
+                        <div class="paddy" style="width: 100%;">
+                            <div class="filter-dd">
+                                <div class="filter-ttl">
+                                    <h3>Download files</h3>
+                                    <a href="@Url.Action("download","manager", new { facultyid=ViewBag.ufacultyid})" title="">manager</a>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>}
+
+                        @if (Convert.ToInt32(ViewBag.uroleid) == 1)
+                        {
+                    <div class="filter-secs">
+                        <div class="filter-heading">
+                            <h3>Manager</h3>
+                            <a href="#" title="">Admin</a>
+                        </div>
+                        <div class="paddy" style="width: 100%;">
+                            <div class="filter-dd">
+                                <div class="filter-ttl">
+                                    <h3>Tags</h3>
+                                    <a href="@Url.Action("tag","manager")" title="">manager</a>
+                                </div>
+                            </div>
+                            <div class="filter-dd">
+                                <div class="filter-ttl">
+                                    <h3>User</h3>
+                                    <a href="@Url.Action("index","manager")" title="">manager</a>
+                                </div>
+                            </div>
+                            <div class="filter-dd">
+                                <div class="filter-ttl">
+                                    <h3>Statistics</h3>
+                                    <a href="@Url.Action("statistics","manager")" title="">manager</a>
+                                </div>
+                            </div>
+                            <div class="filter-dd">
+                                <div class="filter-ttl">
+                                    <form action="@Url.Action("settime","Home")" method="post">
+                                        <label for="opentime">To open time:</label>
+                                        <input type="datetime-local" id="opentime" name="opentime">
+                                        <input type="submit">
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>}
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="main-ws-sec">
+                            <div class="post-topbar">
+                                <div class="user-picy">
+                                    <img src="~/Assets/images/resources/user.png" alt="">
+                                </div>
+                                <div class="post-st">
+                                    <ul>
+                                        <li><a class="post_project" href="#" title="">New Post</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            @* Pagination Top *@
+                            <nav aria-label="Page navigation example" style="float: right; width: auto; ">
+                                <ul class="pagination" style="margin: 0px; padding:13px 0px; background: none;
+">
+                                    @{
+                                        RouteValueDictionary qs = new RouteValueDictionary { };
+                                        if (@Request.Params["mode"] != null)
+                                        { qs.Add("mode", @Request.Params["mode"]); }
+                                        qs.Add("page", @Convert.ToInt32(ViewBag.pageCur) - 1);
+                                    }
+                                    <li class="page-item" style="margin: 0px;">
+                                        <a class="page-link" href="@Url.Action("Index", "Home", qs)" aria-label="Previous">
+                                            <span aria-hidden="true">&laquo;</span>
+                                            <span class="sr-only">Previous</span>
+                                        </a>
+                                    </li>
+
+                                    @for (int i = 1; i <= Convert.ToInt32(@ViewBag.pageCount); i++)
+                                    {
+                                        RouteValueDictionary q = new RouteValueDictionary { };
+                                        if (@Request.Params["mode"] != null)
+                                        { q.Add("mode", @Request.Params["mode"]); }
+                                        q.Add("page", i);
+                                        if (@i == @ViewBag.pageCur)
+                                        {
+                                            <li class="page-item"><a class="page-link" style="margin: 0px; background-color:#e44d3a;" href="@Url.Action("Index", "Home", q ) ">@i</a></li>
+                                        }
+                                        else
+                                        {
+                                            <li class="page-item"><a class="page-link" style="margin: 0px;" href="@Url.Action("Index", "Home", q )">@i</a></li>
+                                        }
+                                    }
+                                    @{
+                                        qs.Remove("page");
+                                        qs.Add("page", @Convert.ToInt32(ViewBag.pageCur) + 1);
+                                    }
+                                    <li class="page-item" style="margin: 0px;">
+                                        <a class="page-link" href="@Url.Action("Index", "Home", qs )" aria-label="Next">
+                                            <span aria-hidden="true">&raquo;</span>
+                                            <span class="sr-only">Next</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </nav>
+                            <div class="posts-section">
+                                @foreach (var item in Model)
+                                {
+                                    <div class="post-bar">
+                                        <div class="post_topbar">
+                                            <div class="usy-dt">
+                                                <img src="images/resources/us-pic.png" alt="">
+                                                <div class="usy-name">
+                                                    <h3>@if (@item.anonymous == true)
+                                                    {@("Anonymous")}
+                                                    else
+                                                    {@item.username}</h3>
+                                                    <span><img src="images/clock.png" alt="">3 min ago</span>
+                                                </div>
+                                            </div>
+                                            <div class="ed-opts">
+                                                <a href="#" title="" class="ed-opts-open">
+                                                    <i class="fas fa-ellipsis-v"></i>
+                                                </a>
+                                                <ul class="ed-options">
+                                                    <li><a href="#" title="">Edit Post</a></li>
+                                                    <li><a href="#" title="">Unsaved</a></li>
+                                                    <li><a href="#" title="">Unbid</a></li>
+                                                    <li><a href="#" title="">Close</a></li>
+                                                    <li><a href="#" title="">Hide</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="epi-sec">
+                                            <ul class="bk-links">
+                                                <li><a href="#" title=""><i class="fas fa-bookmark"></i></a></li>
+                                                <li><a href="#" title=""><i class="fas fa-envelope"></i></a></li>
+                                                <li><a href="#" title="" class="bid_now">Bid Now</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="job_descp">
+                                            <h3>@item.title</h3>
+                                            <hr />
+                                            <p>
+                                                @item.content <a href="@Url.Action("detail", "Post")?postId=@{@item.postid;}" title="">view more</a>
+                                            </p>
+                                            <ul class="skill-tags">
+                                                @{ foreach (var @tag in @item.tag.Split())
+                                                    {
+                                                        if (tag != "")
+                                                        {
+                                                            <li><a href="#" title="">@tag</a></li>
+
+                                                        }
+                                                    }
+                                                }
+                                            </ul>
+                                        </div>
+                                        <div class="job-status-bar">
+                                            <ul class="like-com">
+                                                <li>
+                                                    <a href="#" class="active"><i class="fas fa-heart"></i> Like</a>
+                                                    <img src="images/liked-img.png" alt="">
+                                                    <span>@item.like</span>
+                                                </li>
+                                                <li>
+                                                    <a href="#" class="com">
+                                                        <i class="fas fa-comment-alt"></i> Comments
+                                                        15
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                            <a href="#"><i class="fas fa-eye"></i>Views @item.view</a>
+                                        </div>
+                                    </div>
+                                }
+                                @* Pagination bottom *@
+                                <nav aria-label="Page navigation example" style="float: right; width: auto; ">
+                                    <ul class="pagination" style="margin: 0px; padding:13px 0px; background: none;
+">
+                                        <li class="page-item" style="margin: 0px;">
+                                            <a class="page-link" href="@Url.Action("Index", "Home", qs)" aria-label="Previous">
+                                                <span aria-hidden="true">&laquo;</span>
+                                                <span class="sr-only">Previous</span>
+                                            </a>
+                                        </li>
+
+                                        @for (int i = 1; i <= Convert.ToInt32(@ViewBag.pageCount); i++)
+                                        {
+                                            RouteValueDictionary q = new RouteValueDictionary { };
+                                            if (@Request.Params["mode"] != null)
+                                            { q.Add("mode", @Request.Params["mode"]); }
+                                            q.Add("page", i);
+                                            if (@i == @ViewBag.pageCur)
+                                            {
+                                                <li class="page-item"><a class="page-link" style="margin: 0px; background-color:#e44d3a;" href="@Url.Action("Index", "Home", q ) ">@i</a></li>
+                                            }
+                                            else
+                                            {
+                                                <li class="page-item"><a class="page-link" style="margin: 0px;" href="@Url.Action("Index", "Home", q )">@i</a></li>
+                                            }
+                                        }
+                                        <li class="page-item" style="margin: 0px;">
+                                            <a class="page-link" href="@Url.Action("Index", "Home", qs )" aria-label="Next">
+                                                <span aria-hidden="true">&raquo;</span>
+                                                <span class="sr-only">Next</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </nav>
+                                @*<div class="process-comm">
+                                        <div class="spinner">
+                                            <div class="bounce1"></div>
+                                            <div class="bounce2"></div>
+                                            <div class="bounce3"></div>
+                                        </div>
+                                    </div>*@
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="right-sidebar">
+                            @{ Html.RenderAction("MostView", "Home");}
+                            @{ Html.RenderAction("Popular", "Home");}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<div class="post-popup pst-pj">
+    <div class="post-project">
+        <h3>New Post</h3>
+        <div class="post-project-fields">
+            @using (Html.BeginForm("Create", "Post", FormMethod.Post,
+               new
+               {
+                   enctype = "multipart/form-data",
+                   id = "UploadForm",
+                   name = "UploadForm",
+                   target = "UploadTarget"
+               }))
+            {
+                <div class="row">
+                    <div class="col-lg-12">
+                        <input type="text" name="title" placeholder="Title">
+                    </div>
+                    <div class="col-lg-12">
+                        <textarea id='tagarea' name="tag" id="tag"></textarea>
+                    </div>
+                    <div class="col-lg-12">
+                    </div>
+                    <div class="col-lg-12">
+                        <textarea name="content" placeholder="Content"></textarea>
+                    </div>
+                    <div class="col-lg-12">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">Upload</span>
+                        </div>
+                        <input type="file" class="custom-file-input" style="padding: 0px 1px; margin-left:0px " id="files" name="files" multiple="multiple">
+                    </div>
+                    <div class="col-lg-12">
+                        <div class="slideThree">
+                            <input type="checkbox" id="slideThree" name="anonymous" />
+                            <label for="slideThree">Anonymous</label>
+                        </div>
+                    </div>
+                    <div class="col-lg-12">
+                        <div>
+                            <input type="radio" id="agree" name="agree" style="width:auto;height: 19px; float:left; margin:0px 10px 0px 0px" class="no-pdd" />
+                            <label for="agree">
+                                <span></span>
+                                <small>I agree <a href="@Url.Action("About","Home")">terms and conditions</a></small>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-lg-12">
+                        <ul>
+                            <li><button class="active" type="submit" value="post" id="post_submit" disabled>Post</button></li>
+                            <li><a href="#" id="cancel-project_post" title="">Cancel</a></li>
+                        </ul>
+                    </div>
+                </div>
+            }
+        </div>
+
+
+        <a href="#" title=""><i class="far fa-times-circle"></i></a>
+    </div>
+</div>
+<script>
+    var editor = CodeMirror.fromTextArea(document.getElementById("tagarea"), {
+        //lineNumbers: true,
+        mode: "anhmode",
+        //matchBrackets: true
+    });
+    editor.setOption('placeholder', "Each space for tags ex: hobby city");
+    document.getElementById("agree").addEventListener("change", () => {
+        document.getElementById("post_submit").removeAttribute("disabled");
+    })
+    document.getElementById("post_submit").addEventListener("click", function (event) {
+        event.preventDefault()
+    });
+    var timerId =
+        countdown(
+            new Date("@ViewBag.opentime"),
+            function (ts) {
+                if (ts.value > 0) {
+                    window.clearInterval(timerId);
+                    document.getElementById('post_submit').innerHTML = "Post";
+                    document.getElementById("post_submit").addEventListener("click", function (event) {
+                        document.getElementById("UploadForm").submit();
+                    });
+                }
+                else {
+                    document.getElementById('post_submit').innerHTML = ts.toHTML("strong");
+                }
+            },
+            Date.now(),
+            2, 0,
+            countdown.HOURS | countdown.MINUTES | countdown.SECONDS | ~countdown.MILLISECONDS);
+</script>

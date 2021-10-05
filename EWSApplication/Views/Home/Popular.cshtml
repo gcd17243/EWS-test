@@ -1,0 +1,41 @@
+﻿@model List<EWSApplication.DataLayers.Common.StructurePostToRender>
+
+@{
+    Layout = null;
+}
+
+<div class="widget widget-jobs">
+    <div class="sd-title">
+        <h3>Popular</h3>
+        <i class="fas fa-ellipsis-v"></i>
+    </div>
+    <div class="jobs-list">
+        @foreach (var p in Model)
+        {
+            <div class="job-info">
+                <div class="job-details">
+                    <h3>@p.title</h3>
+                    @if (p.content.Length >= 300)
+                    {
+                        <p>
+                            @(p.content.Substring(0, 300)+"...")
+                        </p>
+                    }
+                    else
+                    { <p>
+                            @p.content
+                      </p>
+                    }
+                </div>
+                <div class="hr-rate" style="        color: #b2b2b2 !important;
+        font-size: 12px;
+        float: right;
+        width: 33px;
+        margin: 5px 0px 0px;">
+                    <span style="color:#b2b2b2 !important; font-size: 12px; font-weight:400;">@p.view</span>    
+                    <i class="fas fa-eye" ></i>
+                </div>
+            </div>
+        }
+    </div>
+</div>

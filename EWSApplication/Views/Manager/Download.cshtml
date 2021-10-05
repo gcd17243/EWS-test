@@ -1,0 +1,33 @@
+﻿@model List<string>
+@{
+    ViewBag.Title = "Download";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@Styles.Render("~/bundles/table")
+
+<main>
+
+    <h2>Download files <small>table posts</small></h2>
+    <a href="@Url.Action("Review","Manager")">Table Review...</a>
+    <ul class="responsive-table">
+        <li class="table-header">
+            <div class="col col-1">File Name</div>
+            @*<div class="col col-2">User Name</div>
+            <div class="col col-3">Title</div>
+            <div class="col col-4">File Name</div>
+            <div class="col col-5">role</div>*@
+            <div class="col col-6"></div>
+        </li>
+        @foreach (var filename in Model)
+        {
+            <li class="table-row">
+                <div class="col col-1" data-label="User Id">@filename</div>
+                <div class="col col-6" data-label="action"><a id="btn" href="@Url.Action("DownloadFile","manager", new { fileName=filename})">Download</a></div>
+            </li>
+
+        }
+    </ul>
+
+</main>
+

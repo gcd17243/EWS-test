@@ -1,0 +1,246 @@
+﻿@model EWSApplication.Entities.DBContext.Post
+
+@{
+    ViewBag.Title = "Detail";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@Scripts.Render("~/bundles/countdown")
+
+<section class="forum-page">
+    <div class="container">
+        <div class="forum-questions-sec">
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="forum-post-view">
+                        <div class="usr-question">
+                            <div class="usr_img">
+                                <img src="images/resources/usrr-img1.png" alt="">
+                            </div>
+                            <div class="usr_quest">
+                                <h3>@Model.title</h3>
+                                <span><i class="fa fa-clock-o"></i>3 min ago</span>
+                                <ul class="react-links">
+                                    <li><a href="#" title=""><i class="fa fa-heart"></i> Vote @Model.like</a></li>
+                                    <li><a href="#" title=""><i class="fa fa-share-alt"></i> Share</a></li>
+                                </ul>
+                                <ul class="quest-tags">
+                                    @{ foreach (var @tag in @Model.tag.Split())
+                                        {
+                                            if (@tag != "")
+                                            {
+                                                <li><a href="#" title="">@tag</a></li>
+                                            }
+                                        } }
+                                </ul>
+                                <p>@Model.content</p>
+                                @if (@ViewBag.ListComt.Count > 0)
+                                {
+                                    if (Convert.ToInt32(ViewBag.uroleid) == 2)
+                                    {
+                                        <div class="comment-section">
+                                            <h3>@ViewBag.ListComt.Count Comments</h3>
+                                            <div class="comment-sec">
+                                                <ul>
+                                                    @foreach (var @cmt in @ViewBag.ListComt)
+                                                    {
+                                                        if (Convert.ToInt32(cmt.roleid) == 1 || Convert.ToInt32(cmt.roleid) == 3)
+                                                        {
+                                                            continue;
+                                                        }
+                                                        else
+                                                        {
+
+                                                            <li>
+                                                                <div class="comment-list">
+                                                                    <div class="bg-img">
+                                                                        <img src="images/resources/bg-img1.png" alt="">
+                                                                    </div>
+                                                                    <div class="comment">
+                                                                        <h3>
+                                                                            @if (@cmt.anonymous == true)
+                                                                            {@("Anonymous")}
+                                                                            else
+                                                                            {@cmt.username}
+                                                                        </h3>
+                                                                        <span><img src="images/clock.png" alt=""> 3 min ago</span>
+                                                                        <p>@cmt.Content</p>
+                                                                    </div>
+                                                                </div>
+                                                            </li>
+                                                        }
+
+                                                    }
+                                                </ul>
+
+                                            </div>
+                                        </div>
+                                    }
+                                    else
+                                    {
+                                        <div class="comment-section">
+                                            <h3>@ViewBag.ListComt.Count Comments</h3>
+                                            <div class="comment-sec">
+                                                <ul>
+                                                    @foreach (var @cmt in @ViewBag.ListComt)
+                                                    {
+                                                        <li>
+                                                            <div class="comment-list">
+                                                                <div class="bg-img">
+                                                                    <img src="images/resources/bg-img1.png" alt="">
+                                                                </div>
+                                                                <div class="comment">
+                                                                    <h3>
+                                                                        @if (@cmt.anonymous == true)
+                                                                        {@("Anonymous")}
+                                                                        else
+                                                                        {@cmt.username}
+                                                                    </h3>
+                                                                    <span><img src="images/clock.png" alt=""> 3 min ago</span>
+                                                                    <p>@cmt.Content</p>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+
+                                                    }
+                                                </ul>
+
+                                            </div>
+                                        </div>
+                                    }
+                                }
+                            </div>
+                        </div>
+                    </div>
+                    <div class="post-comment-box">
+                        <h3>@ViewBag.ListComt.Count Comments</h3>
+                        <div class="user-poster">
+                            <div class="usr-post-img">
+                                <img src="images/resources/bg-img2.png" alt="">
+                            </div>
+                            <div class="post_comment_sec">
+                                <form action="~/Post/NewComment" method="post" id="cmt_form">
+                                    <textarea placeholder="Your Answer" name="Content" style="float:none"></textarea>
+                                    <br>
+                                    <div class="slideThree" style="margin:0; padding:0">
+                                        <input type="checkbox" id="slideThree" name="anonymous" />
+                                        <label for="slideThree">Anonymous</label>
+                                    </div>
+                                    <button id="post_answer" value="post">Post Answer</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="next-prev">
+                        <a href="#" title="" class="fl-left">Preview</a>
+                        <a href="#" title="" class="fl-right">Next</a>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="widget widget-feat">
+                        <ul>
+                            <li>
+                                <i class="fa fa-heart"></i>
+                                <span>@Model.like</span>
+                            </li>
+                            <li>
+                                <i class="fa fa-comment"></i>
+                                <span>@ViewBag.ListComt.Count</span>
+                            </li>
+                            <li>
+                                <i class="fa fa-share-alt"></i>
+                                <span>0</span>
+                            </li>
+                            <li>
+                                <i class="fa fa-eye"></i>
+                                <span>@Model.view</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="widget widget-user">
+                        <h3 class="title-wd">Top User of the Week</h3>
+                        <ul>
+                            <li>
+                                <div class="usr-msg-details">
+                                    <div class="usr-ms-img">
+                                        <img src="images/resources/m-img1.png" alt="">
+                                    </div>
+                                    <div class="usr-mg-info">
+                                        <h3>Jessica William</h3>
+                                        <p>Graphic Designer </p>
+                                    </div>
+                                </div>
+                                <span><img src="images/price1.png" alt="">1185</span>
+                            </li>
+                            <li>
+                                <div class="usr-msg-details">
+                                    <div class="usr-ms-img">
+                                        <img src="images/resources/m-img2.png" alt="">
+                                    </div>
+                                    <div class="usr-mg-info">
+                                        <h3>John Doe</h3>
+                                        <p>PHP Developer</p>
+                                    </div>
+                                </div>
+                                <span><img src="images/price2.png" alt="">1165</span>
+                            </li>
+                            <li>
+                                <div class="usr-msg-details">
+                                    <div class="usr-ms-img">
+                                        <img src="images/resources/m-img3.png" alt="">
+                                    </div>
+                                    <div class="usr-mg-info">
+                                        <h3>Poonam</h3>
+                                        <p>Wordpress Developer </p>
+                                    </div>
+                                </div>
+                                <span><img src="images/price3.png" alt="">1120</span>
+                            </li>
+                            <li>
+                                <div class="usr-msg-details">
+                                    <div class="usr-ms-img">
+                                        <img src="images/resources/m-img4.png" alt="">
+                                    </div>
+                                    <div class="usr-mg-info">
+                                        <h3>Bill Gates</h3>
+                                        <p>C &amp; C++ Developer </p>
+                                    </div>
+                                </div>
+                                <span><img src="images/price4.png" alt="">1009</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="widget widget-adver">
+                        <img src="images/resources/adver-img.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+@{ 
+
+    <script>
+    document.getElementById("post_answer").addEventListener("click", function (event) {
+        event.preventDefault();
+    });
+
+    var timerId =
+        countdown(
+            new Date("@ViewBag.opentime"),
+            function (ts) {
+                if (ts.value > 0) {
+                    window.clearInterval(timerId);
+                    document.getElementById('post_answer').innerHTML = "Post answer";
+                    document.getElementById("post_answer").addEventListener("click", function (event) {
+                        document.getElementById("cmt_form").submit();
+                    });
+                }
+                else {
+                    document.getElementById('post_answer').innerHTML = ts.toHTML("strong");
+                }
+            },
+            Date.now(),
+            2, 0,
+            countdown.HOURS | countdown.MINUTES | countdown.SECONDS & ~countdown.MILLISECONDS);
+    </script>
+}
