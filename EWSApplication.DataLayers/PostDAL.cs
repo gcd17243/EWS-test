@@ -25,7 +25,7 @@ namespace EWSApplication.DataLayers
             int endPos = startPos + pageSize - 1;
             SqlConnection connect = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\EWS.mdf;");
             SqlCommand command = new SqlCommand();
-            command.CommandText = "select * from (select p.*,u.username,u.facultyid, ROW_NUMBER() OVER(ORDER BY postid ASC) AS RowNumber from Post as p INNER JOIN UserAccount as u on u.userid = p.userid) as t where (t.RowNumber BETWEEN @StartPos AND @EndPos ) and isActive = 1";
+            command.CommandText = "select * from (select p.*,u.username,u.Departmentid, ROW_NUMBER() OVER(ORDER BY postid ASC) AS RowNumber from Post as p INNER JOIN UserAccount as u on u.userid = p.userid) as t where (t.RowNumber BETWEEN @StartPos AND @EndPos ) and isActive = 1";
             command.CommandType = CommandType.Text;
             command.Connection = connect;
             connect.Open(); // mở kết nối
@@ -57,7 +57,7 @@ namespace EWSApplication.DataLayers
         /// lấy danh sách tất cả bài post để hiển thị trên Home
         /// </summary>
         /// <returns></returns>
-        public List<StructurePostToRender> GetAllPost(int page , int pageSize,int facultyid)
+        public List<StructurePostToRender> GetAllPost(int page , int pageSize,int Departmentid)
         {
             #region use LinQ
             //var list = (from p in db.Posts
@@ -84,13 +84,13 @@ namespace EWSApplication.DataLayers
 
             SqlConnection connect = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\EWS.mdf;");
             SqlCommand command = new SqlCommand();
-            command.CommandText = "select * from (select p.*,u.username,u.facultyid, ROW_NUMBER() OVER(ORDER BY postid ASC) AS RowNumber from Post as p INNER JOIN UserAccount as u on u.userid = p.userid) as t where (t.RowNumber BETWEEN @StartPos AND @EndPos ) and isActive = 1 and t.facultyid = @facultyid";
+            command.CommandText = "select * from (select p.*,u.username,u.Departmentid, ROW_NUMBER() OVER(ORDER BY postid ASC) AS RowNumber from Post as p INNER JOIN UserAccount as u on u.userid = p.userid) as t where (t.RowNumber BETWEEN @StartPos AND @EndPos ) and isActive = 1 and t.Departmentid = @Departmentid";
             command.CommandType = CommandType.Text;
             command.Connection = connect;
             connect.Open(); // mở kết nối
             command.Parameters.AddWithValue("@StartPos", startPos);
             command.Parameters.AddWithValue("@EndPos", endPos);
-            command.Parameters.AddWithValue("@facultyid", facultyid);
+            command.Parameters.AddWithValue("@Departmentid", Departmentid);
             SqlDataReader read = command.ExecuteReader(CommandBehavior.CloseConnection);
             List<StructurePostToRender> data = new List<StructurePostToRender>();
             while (read.Read())
@@ -129,14 +129,14 @@ namespace EWSApplication.DataLayers
         /// lấy top 5 bài post phổ biến
         /// </summary>
         /// <returns></returns>
-        public List<StructurePostToRender> GetTopPopularPost(int facultyid_temp)
+        public List<StructurePostToRender> GetTopPopularPost(int Departmentid_temp)
         {
             List<StructurePostToRender> lst = new List<StructurePostToRender>();
             //lst = db.Posts.OrderByDescending(x => x.like).Take(5).ToList();
             var list = (from p in db.Posts
                         join u in db.UserAccounts
                         on p.userid equals u.userid
-                        where u.Departmentid == facultyid_temp
+                        where u.Departmentid == Departmentid_temp
                         orderby p.like descending
                         select new
                         {
@@ -177,14 +177,14 @@ namespace EWSApplication.DataLayers
         /// lấy top 5 bài post nhiều view nhất
         /// </summary>
         /// <returns></returns>
-        public List<StructurePostToRender> GetTopViewPost(int facultyid_temp)
+        public List<StructurePostToRender> GetTopViewPost(int Departmentid_temp)
         {
             List<StructurePostToRender> lst = new List<StructurePostToRender>();
             //lst = db.Posts.OrderByDescending(x => x.like).Take(5).ToList();
             var list = (from p in db.Posts
                         join u in db.UserAccounts
                         on p.userid equals u.userid
-                        where u.Departmentid == facultyid_temp
+                        where u.Departmentid == Departmentid_temp
                         orderby p.view descending
                         select new
                         {
