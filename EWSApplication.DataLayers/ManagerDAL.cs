@@ -107,7 +107,7 @@ namespace EWSApplication.DataLayers
         {
             SqlConnection connect = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\EWS.mdf;");
             SqlCommand command = new SqlCommand();
-            command.CommandText = "select f.facultyname, count(*) as amount from Post as p inner join UserAccount as u on p.userid = u.userid inner join Faculty as f on u.facultyid = f.facultyid group by f.facultyname";
+            command.CommandText = "select f.facultyname, count(*) as amount from Post as p inner join UserAccount as u on p.userid = u.userid inner join Faculty as f on u.Departmentid = f.Departmentid group by f.facultyname";
             command.CommandType = CommandType.Text;
             command.Connection = connect;
             connect.Open(); // mở kết nối
@@ -124,15 +124,15 @@ namespace EWSApplication.DataLayers
             return data;
         }
         #endregion
-        public List<PostWaitingActive> GetPostWaitingActive(int facultyid)
+        public List<PostWaitingActive> GetPostWaitingActive(int Departmentid)
         {
             SqlConnection connect = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\EWS.mdf;");
             SqlCommand command = new SqlCommand();
-            command.CommandText = "select * from (select p.*,u.username,u.facultyid from Post as p INNER JOIN UserAccount as u on u.userid = p.userid) as t where isActive = 0 and t.facultyid = @facultyid";
+            command.CommandText = "select * from (select p.*,u.username,u.Departmentid from Post as p INNER JOIN UserAccount as u on u.userid = p.userid) as t where isActive = 0 and t.Departmentid = @Departmentid";
             command.CommandType = CommandType.Text;
             command.Connection = connect;
             connect.Open(); // mở kết nối
-            command.Parameters.AddWithValue("@facultyid", facultyid);
+            command.Parameters.AddWithValue("@Departmentid", Departmentid);
             SqlDataReader read = command.ExecuteReader(CommandBehavior.CloseConnection);
             List<PostWaitingActive> data = new List<PostWaitingActive>();
             while (read.Read())
