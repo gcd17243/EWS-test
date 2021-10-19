@@ -78,7 +78,7 @@ namespace EWSApplication.DataLayers
                     username = c.username,
                     email = c.email,
                     rolename = c.rolename,
-                    facultyname = c.Departmentname
+                    Departmentname = c.Departmentname
                 });
             }
             return data;
@@ -102,8 +102,8 @@ namespace EWSApplication.DataLayers
 
         public string GetDepartment(int id)
         {
-            string facultyname = db.Department.Find(id).Departmentname;
-            return facultyname;
+            string Departmentname = db.Department.Find(id).Departmentname;
+            return Departmentname;
         }
 
     }

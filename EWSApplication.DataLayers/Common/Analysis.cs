@@ -8,7 +8,7 @@ namespace EWSApplication.DataLayers.Common
 {
     public class Analysis
     {
-        public string facultyname { get; set; }
+        public string Departmentname { get; set; }
         public int amount { get; set; }
     }
 }

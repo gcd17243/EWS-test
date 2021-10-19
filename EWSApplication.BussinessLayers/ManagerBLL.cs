@@ -33,9 +33,9 @@ namespace EWSApplication.BussinessLayers
         {
             return ManagerDAL.Analysis();
         }
-        public static List<PostWaitingActive> Manager_GetPostWaitingActive(int facultyid)
+        public static List<PostWaitingActive> Manager_GetPostWaitingActive(int Departmentid)
         {
-            return ManagerDAL.GetPostWaitingActive(facultyid);
+            return ManagerDAL.GetPostWaitingActive(Departmentid);
         }
         public static bool Manager_ActivePost(int postid)
         {

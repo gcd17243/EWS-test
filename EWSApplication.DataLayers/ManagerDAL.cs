@@ -107,7 +107,7 @@ namespace EWSApplication.DataLayers
         {
             SqlConnection connect = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\EWS.mdf;");
             SqlCommand command = new SqlCommand();
-            command.CommandText = "select f.facultyname, count(*) as amount from Post as p inner join UserAccount as u on p.userid = u.userid inner join Faculty as f on u.Departmentid = f.Departmentid group by f.facultyname";
+            command.CommandText = "select f.Departmentname, count(*) as amount from Post as p inner join UserAccount as u on p.userid = u.userid inner join Department as f on u.Departmentid = f.Departmentid group by f.Departmentname";
             command.CommandType = CommandType.Text;
             command.Connection = connect;
             connect.Open(); // mở kết nối
@@ -117,7 +117,7 @@ namespace EWSApplication.DataLayers
             {
                 data.Add(new Analysis
                 {
-                    facultyname = Convert.ToString(read["facultyname"]),
+                    Departmentname = Convert.ToString(read["Departmentname"]),
                     amount = Convert.ToInt32(read["title"]),                 
                 });
             }

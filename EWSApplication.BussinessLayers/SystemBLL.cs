@@ -31,7 +31,7 @@ namespace EWSApplication.BussinessLayers
         {
             return SysDal.UpdateOpenTime(opentime);
         }
-        public static string System_GetFaculty(int id)
+        public static string System_GetDepartment(int id)
         {
             return SysDal.GetDepartment(id);
         }

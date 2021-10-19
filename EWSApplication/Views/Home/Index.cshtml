@@ -30,7 +30,7 @@
                                 <div class="filter-dd">
                                     <div class="filter-ttl">
                                         <h3>Department</h3>
-                                        <a href="#" title="">@ViewBag.facultyname</a>
+                                        <a href="#" title="">@ViewBag.Departmentname</a>
                                     </div>
 
                                 </div>
@@ -48,7 +48,7 @@
                             <div class="filter-dd">
                                 <div class="filter-ttl">
                                     <h3>Review post</h3>
-                                    <a href="@Url.Action("review","manager", new { facultyid=ViewBag.ufacultyid})" title="">manager</a>
+                                    <a href="@Url.Action("review","manager", new { Departmentid=ViewBag.uDepartmentid})" title="">manager</a>
                                 </div>
                             </div>
                         </div>
@@ -65,7 +65,7 @@
                             <div class="filter-dd">
                                 <div class="filter-ttl">
                                     <h3>Download files</h3>
-                                    <a href="@Url.Action("download","manager", new { facultyid=ViewBag.ufacultyid})" title="">manager</a>
+                                    <a href="@Url.Action("download","manager", new { Departmentid=ViewBag.uDepartmentid})" title="">manager</a>
                                 </div>
                             </div>
 

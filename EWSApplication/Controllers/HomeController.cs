@@ -21,9 +21,9 @@ namespace EWSApplication.Controllers
             
             ViewBag.userId = Session["uid"];
             ViewBag.userName = Session["uname"];
-            ViewBag.ufacultyid = Session["ufacultyid"];
+            ViewBag.uDepartmentid = Session["uDepartmentid"];
             ViewBag.uroleid = Session["uroleid"];
-            ViewBag.facultyname = Session["facultyname"];
+            ViewBag.Departmentname = Session["Departmentname"];
             ViewBag.opentime = Session["opentime"];
 
             int pageSize = 5;
@@ -47,7 +47,7 @@ namespace EWSApplication.Controllers
                 page = 1;
             }
             int roleid_temp = Int32.Parse(Session["uroleid"].ToString());
-            int facultyid_temp = Int32.Parse(Session["ufacultyid"].ToString());
+            int Departmentid_temp = Int32.Parse(Session["uDepartmentid"].ToString());
             if (roleid_temp == 1 || roleid_temp == 5)
             {
                 lst = PostBLL.Post_GetAllPost_Guest(page,pageSize);
@@ -57,15 +57,15 @@ namespace EWSApplication.Controllers
                 if (mode == "all")
                 {
 
-                    lst = PostBLL.Post_GetAllPost(page, pageSize, Int32.Parse(Session["ufacultyid"].ToString()));
+                    lst = PostBLL.Post_GetAllPost(page, pageSize, Int32.Parse(Session["uDepartmentid"].ToString()));
                 }
                 if (mode == "popular")
                 {
-                    lst = PostBLL.Post_GetTopPopularPost(facultyid_temp);
+                    lst = PostBLL.Post_GetTopPopularPost(Departmentid_temp);
                 }
                 if (mode == "topview")
                 {
-                    lst = PostBLL.Post_GetTopViewPost(facultyid_temp);
+                    lst = PostBLL.Post_GetTopViewPost(Departmentid_temp);
                 }
             }
             return View(lst);
@@ -86,16 +86,16 @@ namespace EWSApplication.Controllers
 
         public ActionResult MostView()
         {
-            int facultyid_temp = Int32.Parse(Session["ufacultyid"].ToString());
+            int Departmentid_temp = Int32.Parse(Session["uDepartmentid"].ToString());
             List<StructurePostToRender> lst = new List<StructurePostToRender>();
-            lst = PostBLL.Post_GetTopViewPost(facultyid_temp);
+            lst = PostBLL.Post_GetTopViewPost(Departmentid_temp);
             return View(lst);
         }
         public ActionResult Popular()
         {
-            int facultyid_temp = Int32.Parse(Session["ufacultyid"].ToString());
+            int Departmentid_temp = Int32.Parse(Session["uDepartmentid"].ToString());
             List<StructurePostToRender> lst = new List<StructurePostToRender>();
-            lst = PostBLL.Post_GetTopPopularPost(facultyid_temp);
+            lst = PostBLL.Post_GetTopPopularPost(Departmentid_temp);
             return View(lst);
         }
         [AllowAnonymous]
@@ -125,7 +125,7 @@ namespace EWSApplication.Controllers
         public ActionResult Login(string userName, string password)
         {
             var userInfo = SystemBLL.System_Login(userName, password);
-            string facultyName = SystemBLL.System_GetFaculty(userInfo.Departmentid);
+            string DepartmentName = SystemBLL.System_GetDepartment(userInfo.Departmentid);
             if (userInfo == null)
             {
                 ModelState.AddModelError("", "Login Failed!");
@@ -133,10 +133,10 @@ namespace EWSApplication.Controllers
             }
             Session["uid"] = userInfo.userid;
             Session["uname"] = userInfo.username;
-            Session["ufacultyid"] = userInfo.Departmentid;
+            Session["uDepartmentid"] = userInfo.Departmentid;
             Session["uroleid"] = userInfo.roleid;
             Session["opentime"] = userInfo.opentime.ToString();
-            Session["facultyname"] = facultyName;
+            Session["Departmentname"] = DepartmentName;
             FormsAuthentication.SetAuthCookie("isLogin", false);
             return RedirectToAction("Index", "Home");
 

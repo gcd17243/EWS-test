@@ -16,9 +16,9 @@ namespace EWSApplication.BussinessLayers
         {
             return pstDAL.GetAllPost_Guest(page, pageSize);
         }
-        public static List<StructurePostToRender> Post_GetAllPost(int page, int pageSize , int facultyid)
+        public static List<StructurePostToRender> Post_GetAllPost(int page, int pageSize , int Departmentid)
         {
-            return pstDAL.GetAllPost( page,  pageSize, facultyid);
+            return pstDAL.GetAllPost( page,  pageSize, Departmentid);
         }
         /// <summary>
         /// Chi tiết bài post
@@ -33,17 +33,17 @@ namespace EWSApplication.BussinessLayers
         /// lấy top 5 bài post phổ biến
         /// </summary>
         /// <returns></returns>
-        public static List<StructurePostToRender> Post_GetTopPopularPost(int facultyid_temp)
+        public static List<StructurePostToRender> Post_GetTopPopularPost(int Departmentid_temp)
         {
-            return pstDAL.GetTopPopularPost(facultyid_temp);
+            return pstDAL.GetTopPopularPost(Departmentid_temp);
         }
         /// <summary>
         /// lấy top 5 bài post nhiều view nhất
         /// </summary>
         /// <returns></returns>
-        public static List<StructurePostToRender> Post_GetTopViewPost(int facultyid_temp)
+        public static List<StructurePostToRender> Post_GetTopViewPost(int Departmentid_temp)
         {
-            return pstDAL.GetTopViewPost(facultyid_temp);
+            return pstDAL.GetTopViewPost(Departmentid_temp);
         }
         /// <summary>
         /// lấy top bài post lastest

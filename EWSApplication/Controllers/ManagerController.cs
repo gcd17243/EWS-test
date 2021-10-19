@@ -46,16 +46,16 @@ namespace EWSApplication.Controllers
             return View(/*obj*/);
         }
         [HttpGet]
-        public ActionResult Review(int facultyid)
+        public ActionResult Review(int Departmentid)
         {
-            List<PostWaitingActive> obj = ManagerBLL.Manager_GetPostWaitingActive(facultyid);
+            List<PostWaitingActive> obj = ManagerBLL.Manager_GetPostWaitingActive(Departmentid);
             return View(obj);
         }
         [HttpGet]
         public ActionResult Accept(int postid)
         {
             ManagerBLL.Manager_ActivePost(postid);
-            return RedirectToAction("Review", new { facultyid = Convert.ToInt32(Session["ufacultyid"]) });
+            return RedirectToAction("Review", new { Departmentid = Convert.ToInt32(Session["uDepartmentid"]) });
         }
 
         public ActionResult Download()

@@ -19,6 +19,6 @@ namespace EWSApplication.DataLayers.Common
 
       
         public string username { get; set; }
-        public string facultyname { get; set; }
+        public string Departmentname { get; set; }
     }
 }
