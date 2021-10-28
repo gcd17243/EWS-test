@@ -136,7 +136,7 @@ img {
 header {
     float: left;
     width: 100%;
-    background-color: #e44d3a
+    background-color: #733f9e
 }
 
 .header-data {
@@ -174,13 +174,13 @@ header {
 .ask-question {
     background-color: #fff;
     padding: 10px 25px;
-    color: #e44d3a !important;
+    color: #733f9e !important;
     font-size: 14px;
     font-weight: 600
 }
 
     .ask-question:hover {
-        color: #e44d3a
+        color: #733f9e
     }
 
 .forum-bar ul li {
@@ -268,7 +268,7 @@ header {
         }
 
             .search-bar form button i {
-                color: #e44d3a;
+                color: #733f9e;
                 font-size: 20px;
                 font-weight: 700
             }
@@ -298,7 +298,7 @@ nav {
         top: 100%;
         left: 0;
         width: 200px;
-        background-color: #e44d3a;
+        background-color: #733f9e;
         text-align: left;
         padding: 20px 0 10px;
         opacity: 0;
@@ -421,7 +421,7 @@ nav {
         text-transform: capitalize;
         font-weight: 600;
         text-align: center;
-        background-color: #e44d3a;
+        background-color: #733f9e;
         padding: 18px 0
     }
 
@@ -545,7 +545,7 @@ nav > ul > li > a:hover {
         .search_form form button {
             color: #f2f2f2;
             font-size: 14px;
-            background-color: #e44d3a;
+            background-color: #733f9e;
             padding: 0 10px;
             height: 100%;
             position: absolute;
@@ -662,7 +662,7 @@ main {
 .username-dt {
     float: left;
     width: 100%;
-    background-color: #e44d3a;
+    background-color: #733f9e;
     padding-top: 40px
 }
 
@@ -745,7 +745,7 @@ main {
     }
 
     .user-fw-status li a {
-        color: #e44d3a;
+        color: #733f9e;
         font-size: 14px;
         font-weight: 600
     }
@@ -831,7 +831,7 @@ main {
     }
 
         .suggestion-usd > span i:hover {
-            background-color: #e44d3a;
+            background-color: #733f9e;
             color: #fff;
             border-radius: 3px
         }
@@ -844,13 +844,13 @@ main {
 }
 
     .view-more > a {
-        color: #e44d3a;
+        color: #733f9e;
         font-size: 14px;
         font-weight: 700
     }
 
         .view-more > a:hover {
-            color: #e44d3a
+            color: #733f9e
         }
 
 .tags-sec {
@@ -883,7 +883,7 @@ main {
             }
 
                 .tags-sec ul li a:hover {
-                    color: #e44d3a
+                    color: #733f9e
                 }
 
 .cp-sec {
@@ -923,7 +923,7 @@ main {
     width: 100%;
     padding: 23px 20px;
     background-color: #fff;
-    border-top: 4px solid #e44d3a;
+    border-top: 4px solid #733f9e;
     border-left: 1px solid #e4e4e4;
     border-bottom: 1px solid #e4e4e4;
     border-right: 1px solid #e4e4e4;
@@ -971,7 +971,7 @@ main {
         }
 
             .post-st ul li a:hover, .post-st ul li a.active {
-                background-color: #e44d3a;
+                background-color: #733f9e;
                 color: #fff
             }
 
@@ -1078,7 +1078,7 @@ main {
         }
 
 .ed-opts > a:hover {
-    color: #e44d3a
+    color: #733f9e
 }
 
 .usy-name {
@@ -1187,7 +1187,7 @@ main {
         }
 
             .bk-links li i.la-envelope {
-                background-color: #e44d3a
+                background-color: #733f9e
             }
 
 .bid_now {
@@ -1258,7 +1258,7 @@ main {
 }
 
     .job_descp > p a {
-        color: #e44d3a;
+        color: #733f9e;
         font-weight: 600
     }
 
@@ -1313,11 +1313,11 @@ main {
         }
 
             .like-com li a:hover {
-                color: #e44d3a
+                color: #733f9e
             }
 
             .like-com li a.active {
-                color: #e44d3a
+                color: #733f9e
             }
 
             .like-com li a i {
@@ -1332,7 +1332,7 @@ main {
             font-size: 13px;
             width: 30px;
             height: 30px;
-            background-color: #e44d3a;
+            background-color: #733f9e;
             line-height: 30px;
             -webkit-border-radius: 30px;
             -moz-border-radius: 30px;
@@ -1363,7 +1363,7 @@ main {
 }
 
     .job-status-bar > a:hover {
-        color: #e44d3a !important
+        color: #733f9e !important
     }
 
     .job-status-bar > a i {
@@ -1477,7 +1477,7 @@ main {
 }
 
 .envlp {
-    background-color: #e44d3a
+    background-color: #733f9e
 }
 
     .envlp img {
@@ -1500,7 +1500,7 @@ main {
 }
 
     .user-profy > a:hover {
-        background-color: #e44d3a;
+        background-color: #733f9e;
         color: #fff
     }
 
@@ -1577,7 +1577,7 @@ main {
 }
 
 .slick-previous:hover:before, .slick-nexti:hover:before {
-    background-color: #e44d3a;
+    background-color: #733f9e;
     color: #fff;
     border-color: transparent
 }
@@ -1689,7 +1689,7 @@ main {
     }
 
         .comment > a.active, .comment > a:hover {
-            color: #e44d3a
+            color: #733f9e
         }
 
         .comment > a i {
@@ -1728,7 +1728,7 @@ main {
     .comment_box form button {
         float: right;
         color: #fff;
-        background-color: #e44d3a;
+        background-color: #733f9e;
         height: 40px;
         padding: 0 10px;
         text-align: center;
@@ -1815,13 +1815,13 @@ main {
 
     .sign_link > a {
         display: inline-block;
-        color: #e44d3a;
+        color: #733f9e;
         font-size: 14px;
         font-weight: 500
     }
 
         .sign_link > a:hover {
-            color: #e44d3a
+            color: #733f9e
         }
 
 .jobs-list {
@@ -1915,7 +1915,7 @@ main {
     .post-project h3 {
         float: left;
         width: 100%;
-        background-color: #e44d3a;
+        background-color: #733f9e;
         color: #fff;
         text-align: center;
         font-size: 18px;
@@ -1971,7 +1971,7 @@ main {
             }
 
                 .post-project-fields form ul li button.active {
-                    background-color: #e44d3a;
+                    background-color: #733f9e;
                     color: #fff
                 }
 
@@ -1987,7 +1987,7 @@ main {
                 }
 
                     .post-project-fields form ul li button:hover, .post-project-fields form ul li a:hover {
-                        background-color: #e44d3a;
+                        background-color: #733f9e;
                         color: #fff
                     }
 
@@ -2063,7 +2063,7 @@ select {
 }
 
 .sign-in {
-    background-color: #e75348
+    background-color: #a24bd0
 }
 
 .sign-in-page {
@@ -2242,7 +2242,7 @@ select {
         }
 
         .sign-control li.current a {
-            background-color: #e44d3a;
+            background-color: #733f9e;
             color: #fff
         }
 
@@ -2274,7 +2274,7 @@ select {
             left: 0;
             width: 30px;
             height: 2px;
-            background-color: #e44d3a
+            background-color: #733f9e
         }
 
     .sign_in_sec form {
@@ -2344,7 +2344,7 @@ select {
 .sign_in_sec form button {
     color: #fff;
     font-size: 16px;
-    background-color: #e44d3a;
+    background-color: #733f9e;
     padding: 12px 27px;
     border: 0;
     font-weight: 500;
@@ -2406,7 +2406,7 @@ select {
             color: #fff;
             opacity: 0;
             visibility: hidden;
-            background-color: #e44d3a;
+            background-color: #733f9e;
             position: absolute;
             font-family: fontawesome;
             top: 50%;
@@ -2472,7 +2472,7 @@ select {
         color: #fff;
         opacity: 0;
         visibility: hidden;
-        background-color: #e44d3a;
+        background-color: #733f9e;
         position: absolute;
         font-family: fontawesome;
         top: 49%;
@@ -2540,7 +2540,7 @@ select {
             }
 
             .signup-tab ul li.current a {
-                background-color: #e44d3a;
+                background-color: #733f9e;
                 color: #fff
             }
 
@@ -2660,7 +2660,7 @@ footer {
     }
 
         .footy-sec.mn ul li a:hover {
-            color: #e44d3a
+            color: #733f9e
         }
 
     .footy-sec.mn ul li {
@@ -2684,10 +2684,10 @@ footer {
 
 .cover-sec > a {
     display: inline-block;
-    color: #e44d3a;
+    color: #733f9e;
     font-size: 16px;
     background-color: #fff;
-    border: 1px solid #e44d3a;
+    border: 1px solid #733f9e;
     position: absolute;
     top: 30px;
     right: 0;
@@ -2733,7 +2733,7 @@ footer {
     width: 40px;
     height: 40px;
     text-align: center;
-    background: #e44d3a;
+    background: #733f9e;
     padding: 12px;
     color: #ffff;
     left: 0;
@@ -2743,7 +2743,7 @@ footer {
     .add-dp i:hover {
         font-size: 14px;
         border: 2px solid #fff;
-        background: #e44d3a;
+        background: #733f9e;
         padding: 11px
     }
 
@@ -2994,7 +2994,7 @@ footer {
 }
 
 .tab-feed ul li.active span {
-    color: #e44d3a
+    color: #733f9e
 }
 
 .tab-feed ul li img {
@@ -3024,7 +3024,7 @@ footer {
         display: inline-block;
         color: #fff;
         font-size: 16px;
-        background-color: #e44d3a;
+        background-color: #733f9e;
         padding: 12px;
         font-weight: 500
     }
@@ -3202,7 +3202,7 @@ footer {
 
     .portfolio-btn a {
         display: inline-block;
-        color: #e44d3a;
+        color: #733f9e;
         font-size: 16px;
         font-weight: 600
     }
@@ -3383,7 +3383,7 @@ footer {
         }
 
 .save {
-    background-color: #e44d3a;
+    background-color: #733f9e;
     color: #fff;
     border-color: transparent
 }
@@ -3503,7 +3503,7 @@ footer {
     }
 
         .file-submit [type=file] + label {
-            background: #e44d3a;
+            background: #733f9e;
             border: none;
             float: left;
             border-top-right-radius: 0;
@@ -3599,7 +3599,7 @@ a:hover {
 
             .billing-method ul li i {
                 font-size: 13px;
-                color: #e44d3a
+                color: #733f9e
             }
 
 .lt-sec {
@@ -3625,7 +3625,7 @@ a:hover {
         display: inline-block;
         color: #fff;
         font-size: 16px;
-        background-color: #e44d3a;
+        background-color: #733f9e;
         padding: 10px 25px
     }
 
@@ -3725,7 +3725,7 @@ a:hover {
     left: 24px;
     width: 7px;
     height: 7px;
-    background-color: #e44d3a;
+    background-color: #733f9e;
     -webkit-border-radius: 100px;
     -moz-border-radius: 100px;
     -ms-border-radius: 100px;
@@ -3743,7 +3743,7 @@ a:hover {
     .payment_methods form button {
         color: #fff;
         font-size: 16px;
-        background-color: #e44d3a;
+        background-color: #733f9e;
         padding: 10px 15px;
         border: 0;
         cursor: pointer
@@ -3909,7 +3909,7 @@ a:hover {
 }
 
 .message-us {
-    background-color: #e44d3a
+    background-color: #733f9e
 }
 
 .hire-us {
@@ -3961,7 +3961,7 @@ a:hover {
             position: absolute;
             top: 0;
             right: 0;
-            background-color: #e44d3a;
+            background-color: #733f9e;
             color: #fff;
             font-size: 16px;
             font-weight: 500;
@@ -3994,7 +3994,7 @@ a:hover {
 
     .filter-heading h3 {
         float: left;
-        color: #e44d3a;
+        color: #733f9e;
         font-size: 18px;
         font-weight: 600
     }
@@ -4029,12 +4029,12 @@ a:hover {
 }
 
     .filter--tt2 .dropdown .dropdown-menu a:hover {
-        color: #e44d3a !important;
+        color: #733f9e !important;
         background: 0 0 !important
     }
 
     .filter--tt2 .dropdown .dropdown-menu a:focus {
-        color: #e44d3a !important;
+        color: #733f9e !important;
         background: 0 0 !important
     }
 
@@ -4147,7 +4147,7 @@ a:hover {
                 -ms-border-radius: 100px;
                 -o-border-radius: 100px;
                 border-radius: 100px;
-                background-color: #e44d3a;
+                background-color: #733f9e;
                 top: 3px;
                 left: 3px
             }
@@ -4193,7 +4193,7 @@ a:hover {
         -ms-border-radius: 100px;
         -o-border-radius: 100px;
         border-radius: 100px;
-        background-color: #e44d3a;
+        background-color: #733f9e;
         border: 2px solid #e3e3e3;
         -webkit-box-shadow: 1px 2px 3px rgba(0,0,0,.43);
         -moz-box-shadow: 1px 2px 3px rgba(0,0,0,.43);
@@ -4287,7 +4287,7 @@ a:hover {
         right: 10px;
         width: 20px;
         height: 20px;
-        background-color: #e44d3a;
+        background-color: #733f9e;
         text-align: center;
         font-size: 12px;
         color: #fff;
@@ -4346,7 +4346,7 @@ a:hover {
 .con-title {
     float: left;
     width: 100%;
-    background-color: #e44d3a;
+    background-color: #733f9e;
     padding: 15px 25px;
     -webkit-border-radius: 10px 10px 0 0;
     -moz-border-radius: 10px 10px 0 0;
@@ -4424,7 +4424,7 @@ a:hover {
 }
 
 .activee {
-    background-color: #e44d3a
+    background-color: #733f9e
 }
 
 .usy-info {
@@ -4491,7 +4491,7 @@ a:hover {
     .chat-msg p {
         color: #fff;
         font-size: 14px;
-        background-color: #e44d3a;
+        background-color: #733f9e;
         line-height: 18px;
         -webkit-border-radius: 15px;
         -moz-border-radius: 15px;
@@ -4604,7 +4604,7 @@ a:hover {
         }
 
         .typing-msg form button {
-            color: #e44d3a;
+            color: #733f9e;
             font-size: 18px;
             font-weight: 600;
             position: absolute;
@@ -4714,7 +4714,7 @@ a:hover {
 
 .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
     background-color: inherit;
-    color: #e44d3a;
+    color: #733f9e;
     border-color: inherit
 }
 
@@ -4809,7 +4809,7 @@ a:hover {
         }
 
             .save-stngs ul li button:hover {
-                background-color: #e44d3a;
+                background-color: #733f9e;
                 color: #fff;
                 border-color: transparent
             }
@@ -5033,7 +5033,7 @@ a:hover {
 }
 
     .bx-info h3 {
-        color: #e44d3a;
+        color: #733f9e;
         font-size: 20px;
         font-weight: 600;
         margin-bottom: 5px
@@ -5175,7 +5175,7 @@ a:hover {
     -ms-border-radius: 100px;
     -o-border-radius: 100px;
     border-radius: 100px;
-    background-color: #e44d3a;
+    background-color: #733f9e;
     position: absolute;
     top: -3px;
     right: 0;
@@ -5362,7 +5362,7 @@ a:hover {
 .message-inner-dt > p {
     float: right;
     width: 60%;
-    background-color: #e44d3a;
+    background-color: #733f9e;
     font-size: 14px;
     line-height: 22px;
     padding: 10px 35px;
@@ -5431,7 +5431,7 @@ a:hover {
     .mf-field button {
         float: left;
         width: 17%;
-        background-color: #e44d3a;
+        background-color: #733f9e;
         height: 45px;
         text-align: center;
         color: #fff;
@@ -5480,11 +5480,11 @@ a:hover {
     }
 
         .forum-links ul li.active {
-            border-color: #e44d3a
+            border-color: #733f9e
         }
 
             .forum-links ul li.active a {
-                color: #e44d3a
+                color: #733f9e
             }
 
         .forum-links ul li a {
@@ -5580,7 +5580,7 @@ a:hover {
         }
 
             .react-links li a:hover {
-                color: #e44d3a
+                color: #733f9e
             }
 
             .react-links li a i {
@@ -5656,7 +5656,7 @@ a:hover {
     }
 
         .pagination li .page-link.active {
-            background-color: #e44d3a;
+            background-color: #733f9e;
             color: #fff;
             border-color: transparent
         }
@@ -5855,7 +5855,7 @@ a:hover {
         .post_comment_sec form button {
             color: #fff;
             font-size: 14px;
-            background-color: #e44d3a;
+            background-color: #733f9e;
             padding: 10px 25px;
             border: 0;
             font-weight: 600;
@@ -5883,7 +5883,7 @@ a:hover {
 
         .next-prev > a:hover {
             color: #fff;
-            background-color: #e44d3a
+            background-color: #733f9e
         }
 
 .fl-left {
@@ -5927,7 +5927,7 @@ a:hover {
             }
 
             .widget-feat ul li i.fa-comment {
-                color: #e44d3a
+                color: #733f9e
             }
 
             .widget-feat ul li i.fa-share-alt {
@@ -6008,13 +6008,13 @@ a:hover {
 }
 
     .cadidatesbtn button {
-        background-color: #e44d3a;
+        background-color: #733f9e;
         border: none;
         margin-top: -3px
     }
 
         .cadidatesbtn button:hover {
-            background-color: #e44d3a
+            background-color: #733f9e
         }
 
     .cadidatesbtn span {
@@ -6049,9 +6049,9 @@ a:hover {
 }
 
     .cadidatesbtn i:hover {
-        background-color: #e44d3a;
+        background-color: #733f9e;
         color: #fff;
-        border: 1px solid #e44d3a
+        border: 1px solid #733f9e
     }
 
 .inner {
@@ -6060,8 +6060,8 @@ a:hover {
 }
 
     .inner li a:hover {
-        color: #e44d3a;
-        border-bottom: 2px solid #e44d3a;
+        color: #733f9e;
+        border-bottom: 2px solid #733f9e;
         padding-bottom: 9px
     }
 
@@ -6081,7 +6081,7 @@ a:hover {
 }
 
 .clrbtn a {
-    background-color: #e44d3a;
+    background-color: #733f9e;
     color: #fff;
     padding: 5px 10px;
     margin-right: 15px
@@ -6116,7 +6116,7 @@ a:hover {
     }
 
     .devepbtn a:hover {
-        background-color: #e44d3a;
+        background-color: #733f9e;
         color: #fff
     }
 
@@ -6172,7 +6172,7 @@ a:hover {
 
 .add-pic-box {
     display: inline-block;
-    color: #e44d3a;
+    color: #733f9e;
     font-size: 16px;
     position: absolute;
     top: 30px;
@@ -6191,9 +6191,9 @@ a:hover {
 
         .add-pic-box [type=file] + label {
             background: #fff;
-            border: 2px solid #e44d3a;
+            border: 2px solid #733f9e;
             border-radius: 3px;
-            color: #e44d3a;
+            color: #733f9e;
             cursor: pointer;
             display: inline-block;
             font-size: 15px;
@@ -6209,7 +6209,7 @@ a:hover {
         }
 
             .add-pic-box [type=file] + label:hover {
-                background: #e44d3a;
+                background: #733f9e;
                 color: #fff
             }
 
@@ -6236,7 +6236,7 @@ a:hover {
 }
 
 .activebidbtn i:hover {
-    background-color: #e44d3a;
+    background-color: #733f9e;
     color: #fff;
     border: none
 }
@@ -6402,7 +6402,7 @@ a:hover {
 }
 
 .topsearch i {
-    color: #e44d3a
+    color: #733f9e
 }
 
 .dropdown-toggle::after {
@@ -6469,7 +6469,7 @@ a:hover {
     }
 
     .helpforum a {
-        background-color: #e44d3a;
+        background-color: #733f9e;
         color: #fff;
         padding: 10px 15px;
         line-height: 4;
@@ -6494,7 +6494,7 @@ a:hover {
 .actionstext a {
     font-size: 16px;
     font-weight: 500;
-    color: #e44d3a;
+    color: #733f9e;
     line-height: 2;
     display: block
 }
@@ -6507,12 +6507,12 @@ a:hover {
     .helpform h3 {
         font-size: 18px;
         font-weight: 400;
-        color: #e44d3a;
+        color: #733f9e;
         margin-bottom: 10px
     }
 
     .helpform a {
-        background-color: #e44d3a;
+        background-color: #733f9e;
         color: #fff;
         padding: 10px 15px;
         border-radius: 3px
@@ -6532,7 +6532,7 @@ a:hover {
 }
 
     .bookingsideber h3:active {
-        color: #e44d3a
+        color: #733f9e
     }
 
 .helpforum h4 {
@@ -6575,7 +6575,7 @@ a:hover {
 }
 
     .btns a:hover {
-        background-color: #e44d3a;
+        background-color: #733f9e;
         color: #fff
     }
 
@@ -6598,7 +6598,7 @@ a:hover {
 
 .privacy i {
     float: right;
-    color: #e44d3a;
+    color: #733f9e;
     font-size: 20px;
     font-weight: 600
 }
@@ -6640,7 +6640,7 @@ a:hover {
 
         .privabtns a:hover {
             color: #fff;
-            background-color: #e44d3a
+            background-color: #733f9e
         }
 
 .privac {
@@ -6688,7 +6688,7 @@ a:hover {
     font-size: 12px;
     width: 100%;
     height: 100%;
-    background: #e44d3a;
+    background: #733f9e;
     display: block;
     border-radius: 50%;
     padding-top: 3px
@@ -6745,7 +6745,7 @@ a:hover {
 }
 
     .reply-area span:hover {
-        color: #e44d3a
+        color: #733f9e
     }
 
 .reply-area i {
@@ -6783,7 +6783,7 @@ a:hover {
 }
 
 .postcomment a {
-    background-color: #e44d3a;
+    background-color: #733f9e;
     color: #fff;
     padding: 9px 25px 8px;
     line-height: 37px;
@@ -6799,18 +6799,18 @@ a:hover {
 }
 
 .widget-about button:hover {
-    background-color: #e44d3a
+    background-color: #733f9e
 }
 
 .widget-about button {
-    background-color: #e44d3a;
+    background-color: #733f9e;
     border: none;
     padding: 12px 0;
     width: 100%
 }
 
 .widget-about p {
-    background-color: #e44d3a;
+    background-color: #733f9e;
     color: #fff;
     padding: 10px 0
 }
@@ -6833,7 +6833,7 @@ a:hover {
 }
 
 .paymethd p {
-    color: #e44d3a
+    color: #733f9e
 }
 
 .copylink p {
@@ -6842,7 +6842,7 @@ a:hover {
 }
 
 .copylink a {
-    background-color: #e44d3a;
+    background-color: #733f9e;
     color: #fff;
     padding: 10px 15px;
     border-radius: 4px
@@ -6930,7 +6930,7 @@ a:hover {
 }
 
 .modal-header {
-    background-color: #e44d3a;
+    background-color: #733f9e;
     display: block !important
 }
 
@@ -7013,7 +7013,7 @@ a:hover {
     }
 
 .sponser i {
-    background-color: #e44d3a;
+    background-color: #733f9e;
     color: #fff;
     margin-right: 5px;
     padding: 2px
@@ -7047,19 +7047,19 @@ a:hover {
     }
 
         .modal-footer button:hover {
-            background-color: #e44d3a;
+            background-color: #733f9e;
             color: #fff;
-            border: 1px solid #e44d3a
+            border: 1px solid #733f9e
         }
 
 .place-bid-btn {
     font-size: 15px;
     font-weight: 500;
     color: #fff !important;
-    background-color: #e44d3a !important;
+    background-color: #733f9e !important;
     border: none;
     padding: 10px;
-    border: 1px solid #e44d3a;
+    border: 1px solid #733f9e;
     border-radius: 3px
 }
 
@@ -7074,7 +7074,7 @@ a:hover {
 }
 
 .replybtn {
-    background-color: #e44d3a;
+    background-color: #733f9e;
     color: #fff;
     padding: 10px;
     margin-left: 15px;
@@ -7099,7 +7099,7 @@ a:hover {
     font-size: 12px;
     margin: 5px 5px 0 0;
     padding: 3px;
-    background-color: #e44d3a;
+    background-color: #733f9e;
     color: #fff;
     border-radius: 50%
 }
@@ -7148,7 +7148,7 @@ ul#myTab {
 }
 
 #my-bids li a:hover {
-    color: #e44d3a
+    color: #733f9e
 }
 
 #saved-jobs ul {
@@ -7162,7 +7162,7 @@ ul#myTab {
     }
 
 #saved-jobs li a:hover {
-    color: #e44d3a
+    color: #733f9e
 }
 
 .wordpressdevlp h2 {
@@ -7173,16 +7173,16 @@ ul#myTab {
 
 #saved-jobs .nav-tabs .nav-item.show .nav-link, #saved-jobs .nav-tabs .nav-link.active {
     background-color: inherit;
-    color: #e44d3a !important;
+    color: #733f9e !important;
     padding-bottom: 9px;
-    border-bottom: 2px solid #e44d3a !important
+    border-bottom: 2px solid #733f9e !important
 }
 
 #my-bids .nav-tabs .nav-item.show .nav-link, #my-bids .nav-tabs .nav-link.active {
     background-color: inherit;
-    color: #e44d3a !important;
+    color: #733f9e !important;
     padding-bottom: 9px;
-    border-bottom: 2px solid #e44d3a !important
+    border-bottom: 2px solid #733f9e !important
 }
 
 .descptab li img {
@@ -7289,7 +7289,7 @@ ul#myTab {
     }
 
         .select-files button:hover {
-            background-color: #e44d3a;
+            background-color: #733f9e;
             color: #fff
         }
 
@@ -7343,7 +7343,7 @@ ul#myTab {
         display: inline-block;
         border: 1px solid #e5e5e5;
         border-radius: 3px;
-        background: #e44d3a;
+        background: #733f9e;
         font-weight: 500;
         padding: 10px 15px;
         outline: none;
@@ -7353,7 +7353,7 @@ ul#myTab {
     }
 
     .custom-file-input:hover::before {
-        background-color: #e44d3a;
+        background-color: #733f9e;
         color: #fff
     }
 
@@ -7362,7 +7362,7 @@ ul#myTab {
     }
 
         .custom-file-input:active::before {
-            background: #e44d3a;
+            background: #733f9e;
             color: #fff
         }
 
@@ -7446,8 +7446,8 @@ ul#myTab {
 
 .custom-control-input:checked ~ .custom-control-label::before {
     color: #fff;
-    border-color: #e44d3a;
-    background-color: #e44d3a;
+    border-color: #733f9e;
+    background-color: #733f9e;
     box-shadow: none;
     outline: none
 }

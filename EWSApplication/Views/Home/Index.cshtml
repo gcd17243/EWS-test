@@ -34,9 +34,9 @@
                                     </div>
 
                                 </div>
+                              
                             </div>
-                        </div>
-
+                        </div>               
                         @if (Convert.ToInt32(ViewBag.uroleid) == 4)
                         {
                     <div class="filter-secs">
@@ -54,7 +54,7 @@
                         </div>
                     </div>}
 
-                        @if (Convert.ToInt32(ViewBag.uroleid) == 6)
+                        @if (Convert.ToInt32(ViewBag.uroleid) == 3)
                         {
                     <div class="filter-secs">
                         <div class="filter-heading">
@@ -147,7 +147,7 @@
                                         q.Add("page", i);
                                         if (@i == @ViewBag.pageCur)
                                         {
-                                            <li class="page-item"><a class="page-link" style="margin: 0px; background-color:#e44d3a;" href="@Url.Action("Index", "Home", q ) ">@i</a></li>
+                                            <li class="page-item"><a class="page-link" style="margin: 0px; background-color:#733f9e;" href="@Url.Action("Index", "Home", q ) ">@i</a></li>
                                         }
                                         else
                                         {
@@ -256,7 +256,7 @@
                                             q.Add("page", i);
                                             if (@i == @ViewBag.pageCur)
                                             {
-                                                <li class="page-item"><a class="page-link" style="margin: 0px; background-color:#e44d3a;" href="@Url.Action("Index", "Home", q ) ">@i</a></li>
+                                                <li class="page-item"><a class="page-link" style="margin: 0px; background-color:#733f9e;" href="@Url.Action("Index", "Home", q ) ">@i</a></li>
                                             }
                                             else
                                             {

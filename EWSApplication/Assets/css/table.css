@@ -23,7 +23,7 @@ h2 {
 }
 
 .responsive-table .table-header {
-    background-color: #ea7667;
+    background-color: #a24bd0;
     font-size: 14px;
     text-transform: uppercase;
     letter-spacing: 0.03em;
@@ -62,7 +62,7 @@ h2 {
 }
 
 .responsive-table .col-6 > a{
-    color: #ea7667;
+    color: #a24bd0;
     font-size: 15px;
     font-weight: 600;
     float: right;
@@ -89,7 +89,7 @@ h2 {
 .post-project-fields button {
     outline: none;
     border: none;
-    background-color: #e44d3a;
+    background-color: #733f9e;
     padding: 11px 15px;
     margin: 7px 0px;
     color: #fff;

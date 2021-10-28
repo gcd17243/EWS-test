@@ -125,7 +125,6 @@ namespace EWSApplication.Controllers
         public ActionResult Login(string userName, string password)
         {
             var userInfo = SystemBLL.System_Login(userName, password);
-            string DepartmentName = SystemBLL.System_GetDepartment(userInfo.Departmentid);
             if (userInfo == null)
             {
                 ModelState.AddModelError("", "Login Failed!");
@@ -136,7 +135,6 @@ namespace EWSApplication.Controllers
             Session["uDepartmentid"] = userInfo.Departmentid;
             Session["uroleid"] = userInfo.roleid;
             Session["opentime"] = userInfo.opentime.ToString();
-            Session["Departmentname"] = DepartmentName;
             FormsAuthentication.SetAuthCookie("isLogin", false);
             return RedirectToAction("Index", "Home");
 
